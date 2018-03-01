@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  one:
+  fourier-smoke:
     docker:
       - image: circleci/python:3.6.1
     steps:
@@ -18,7 +18,7 @@ jobs:
           # Must be relative path from root
           paths:
             - echo-output      
-  two:
+  ace-smoke:
     docker:
       - image: circleci/python:3.6.1
     steps:
@@ -36,9 +36,9 @@ jobs:
           fi
 workflows:
   version: 2
-  one_and_two:
+  fourier-smoke_and_ace-smoke:
     jobs:
-      - one
-      - two:
+      - fourier-smoke
+      - ace-smoke:
           requires:
-            - one
+            - fourier-smoke
