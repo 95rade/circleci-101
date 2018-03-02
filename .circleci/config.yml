@@ -16,7 +16,7 @@ jobs:
       - run: echo "A first hello"
       - run: sleep 5
       - run: mkdir -p ~/my_workspace
-      - run: cd my_workspace
+      #- run: cd my_workspace
       - run: echo "Trying out workspaces" > echo-output
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
