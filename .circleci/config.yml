@@ -5,8 +5,10 @@
 version: 2
 jobs:
   fourier-smoke:
-    docker:
-      - image: circleci/python:3.6.1
+    machine:
+      - image: circleci/classic:201708-01
+    #docker:
+    #  - image: circleci/python:3.6.1
     working_directory: ~/circleci-101
     steps:
       - checkout
