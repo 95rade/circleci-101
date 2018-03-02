@@ -12,11 +12,12 @@ jobs:
       # ... setup_remote_docker step is a MUST for building/testing app ...
       - setup_remote_docker
       - checkout
-      - run: pwd;ls -al
+      - run: pwd;ls -al;whoami;uname -a
       - run: echo "A first hello"
       - run: sleep 5
       - run: mkdir -p ~/my_workspace
-      - run: echo "Trying out workspaces" > my_workspace/echo-output
+      - run: cd my_workspace
+      - run: echo "Trying out workspaces" > echo-output
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
           root: my_workspace
