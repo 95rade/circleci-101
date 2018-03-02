@@ -1,5 +1,5 @@
 environment:
-              cluster-ip: 172.27.223.234 {cluster-ip}
+              cluster-master-ip: 172.27.223.236 {cluster-ip}
               name:  sit-p3 -> {env-name}
               version: 1.0 -> {env-version}
               namespaces:
