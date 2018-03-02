@@ -5,17 +5,17 @@
 version: 2
 jobs:
   fourier-smoke:
-    machine:
-      - image: circleci/classic:201708-01
-    #docker:
-    #  - image: circleci/python:3.6.1
-    working_directory: ~/circleci-101
+    docker:
+      - image: circleci/python:3.6.1-browser
+    working_directory: ~/my-workspace/circleci-101
     steps:
+      # ... setup_remote_docker step is a MUST for building/testing app ...
+      - setup_remote_docker
       - checkout
       - run: pwd;ls -al
       - run: echo "A first hello"
       - run: sleep 5
-      - run: mkdir -p my_workspace
+      - run: mkdir -p ~/my_workspace
       - run: echo "Trying out workspaces" > my_workspace/echo-output
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
