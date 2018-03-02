@@ -15,12 +15,12 @@ jobs:
       - run: pwd;ls -al;whoami;uname -a
       - run: echo "A first hello"
       - run: sleep 5
-      - run: mkdir -p ~/my_workspace
+      - run: mkdir -p ~/my-workspace/circleci-101
       #- run: cd my_workspace
       - run: echo "Trying out workspaces" > echo-output
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
-          root: my_workspace
+          root: ~/my-workspace/circleci-101
           # Must be relative path from root
           paths:
             - echo-output      
