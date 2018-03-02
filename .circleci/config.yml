@@ -6,7 +6,7 @@ version: 2
 jobs:
   fourier-smoke:
     docker:
-      - image: circleci/python:3.6.1-browser
+      - image: circleci/python:3.6.1
     working_directory: ~/my-workspace/circleci-101
     steps:
       # ... setup_remote_docker step is a MUST for building/testing app ...
